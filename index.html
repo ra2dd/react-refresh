@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width" />
 
         <link href="./stylesheets/main.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
 
         <!-- React scripts -->
         <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -20,11 +21,22 @@
 
         <div id="app"></div>
 
-
         <script type="text/jsx">
             const app = document.getElementById('app');
 
-            ReactDOM.render(<h2>Text added with ReactDom.</h2>, app);
+            function Header(){
+                return (<h2>Text added with ReactDom.</h2>);
+            }
+
+            function HomePage(){
+                return (
+                    <div>
+                        <Header />
+                    </div>
+                );
+            }
+
+            ReactDOM.render(<HomePage />, app);
         </script>
     </body>
 </html>

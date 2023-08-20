@@ -6,15 +6,25 @@
         <meta name="viewport" content="width=device-width" />
 
         <link href="./stylesheets/main.css" rel="stylesheet" />
-        <script src="./scripts/main.js" defer></script>
-        <script src="https://unpkg.com/react@17/umd/react.development.js" defer></script>
-        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" defer></script>
+
+        <!-- React scripts -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Babel script -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     </head>
     <body>
-        <h1>Javascript refresh</h1>
+        <h1>React refresh</h1>
 
         <p>Getting elemetns</p>
 
         <div id="app"></div>
+
+
+        <script type="text/jsx">
+            const app = document.getElementById('app');
+
+            ReactDOM.render(<h2>Text added with ReactDom.</h2>, app);
+        </script>
     </body>
 </html>

@@ -24,7 +24,7 @@
         <script type="text/jsx">
             const app = document.getElementById('app');
 
-            function createTitle(title){
+            function createTitle(title) {
                 /*
                 if (title){
                     return title;
@@ -36,14 +36,19 @@
 
             }
 
-            function Header(props){
+            function Header(props) {
 
                 return (<h2>Text added with ReactDom. { createTitle(props.title) }</h2>);
             }
 
-            function HomePage(){
+            function HomePage() {
                 const names = ['Name1', 'Name2', 'Name3'];
-
+                const [likes, setLikes] = React.useState(0)
+                
+                function handleClick() {
+                    setLikes(likes + 1);
+                }
+                
                 return (
                     <div>
                         <Header title="Props in React."/>
@@ -56,6 +61,8 @@
                                 )
                             )}
                         </ul>
+
+                        <button onClick={handleClick}>Likes ({likes})</button>
                     </div>
                 );
             }

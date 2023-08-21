@@ -24,14 +24,38 @@
         <script type="text/jsx">
             const app = document.getElementById('app');
 
-            function Header(){
-                return (<h2>Text added with ReactDom.</h2>);
+            function createTitle(title){
+                /*
+                if (title){
+                    return title;
+                } else{
+                    return 'Default title.'
+                } 
+                */
+                return title ? title : 'Default title'
+
+            }
+
+            function Header(props){
+
+                return (<h2>Text added with ReactDom. { createTitle(props.title) }</h2>);
             }
 
             function HomePage(){
+                const names = ['Name1', 'Name2', 'Name3'];
+
                 return (
                     <div>
-                        <Header />
+                        <Header title="Props in React."/>
+                        <Header title="Another title."/>
+
+                        <ul>
+                            {names.map(
+                                (name) => (
+                                    <li key={name}>{ name }</li>
+                                )
+                            )}
+                        </ul>
                     </div>
                 );
             }
